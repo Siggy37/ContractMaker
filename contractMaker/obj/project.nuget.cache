@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "SbCae/mUks+5jK2wYhiWKjrHcxwkUc2T9qKldy8LemVeRCimk9eS/nFio6oFp8twvDSdwwK/MGJ3hoNqr5JuyA==",
+  "success": true,
+  "projectFilePath": "D:\\contractMaker\\contractMaker\\contractMaker.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\brand\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
