@@ -42,7 +42,10 @@ namespace contractMaker.Views
             }
             InitializeComponent();
 
-            totalAmountText.Text = mContract.GetTotalAmount().ToString();
+            Binding headerBinding = new Binding();
+            headerBinding.Source = mContract;
+            BindingOperations.SetBinding(Header, TextBox.TextProperty, headerBinding);
+            // totalAmountText.Text = mContract.GetTotalAmount().ToString();
             titleText.Text = mContract.getTitle();
             itemList.ItemsSource = mItemEntries;
         }
@@ -67,5 +70,17 @@ namespace contractMaker.Views
             this.itemList.Items.Refresh();
         }
 
+        public void UpdateTotal(object sender, RoutedEventArgs e)
+        {
+            mContract.mTotalAmount = 0;
+            foreach (var item in itemList.Items)
+            {
+               ItemEntry thisItem = (ItemEntry)item;
+                float amount = thisItem.mAmount;
+                mContract.mTotalAmount += amount;
+            }
+            float total = mContract.mTotalAmount;
+            totalAmountText.Text = total.ToString();
+        }
     }
 }

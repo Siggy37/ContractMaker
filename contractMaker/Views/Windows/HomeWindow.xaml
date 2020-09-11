@@ -38,6 +38,7 @@
                 <DataTemplate>
                     <WrapPanel>
                         <Grid Background="White"
+                              Height="20"
                               UIElement.PreviewMouseDown="LaunchEditerWindow">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="240" />

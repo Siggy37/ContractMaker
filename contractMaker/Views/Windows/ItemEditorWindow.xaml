@@ -24,7 +24,8 @@
                        Margin="200,0,0,0">
                         
             </TextBlock>
-            <TextBlock Name="totalAmountText" 
+            <TextBlock Name="totalAmountText"
+                       Text="{Binding mTotalAmount}"
                        Height="20" 
                        Width="200" 
                        Margin="450,0,0,0">
@@ -96,9 +97,13 @@
                             </TextBox.Style>
                         </TextBox>
 
-                        <TextBox Width="100" Margin="20,0,0,0" BorderBrush="Black"
+                        <TextBox 
+                                 Name="amountBox"
+                                 Width="100" Margin="20,0,0,0" 
+                                 BorderBrush="Black"
                                  TextAlignment="Right"
                                  Text="{Binding mAmount}"
+                                 LostFocus="UpdateTotal"
                                  FontSize="14">
                             <TextBox.Style>
                                 <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
