@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\contractMaker\\contractMaker\\contractMaker.csproj": {}
+    "D:\\contractMaker\\CMGit\\ContractMaker\\contractMaker\\contractMaker.csproj": {}
   },
   "projects": {
-    "D:\\contractMaker\\contractMaker\\contractMaker.csproj": {
+    "D:\\contractMaker\\CMGit\\ContractMaker\\contractMaker\\contractMaker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\contractMaker\\contractMaker\\contractMaker.csproj",
+        "projectUniqueName": "D:\\contractMaker\\CMGit\\ContractMaker\\contractMaker\\contractMaker.csproj",
         "projectName": "contractMaker",
-        "projectPath": "D:\\contractMaker\\contractMaker\\contractMaker.csproj",
+        "projectPath": "D:\\contractMaker\\CMGit\\ContractMaker\\contractMaker\\contractMaker.csproj",
         "packagesPath": "C:\\Users\\brand\\.nuget\\packages\\",
-        "outputPath": "D:\\contractMaker\\contractMaker\\obj\\",
+        "outputPath": "D:\\contractMaker\\CMGit\\ContractMaker\\contractMaker\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

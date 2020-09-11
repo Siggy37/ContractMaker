@@ -46,7 +46,8 @@
                                 <ColumnDefinition Width="130" />
                                 <ColumnDefinition Width="70" />
                             </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0"
+                        <TextBlock Name="titleBlock"
+                            Grid.Column="0"
                             Text="{Binding mTitle}"
                                    Margin="23,0,0,0">
                             

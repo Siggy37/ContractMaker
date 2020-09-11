@@ -44,11 +44,13 @@ namespace contractMaker.Views
 
         public void LaunchEditerWindow(Object sender, RoutedEventArgs e)
         {
-            //int index = contractsList.Items.IndexOf(e.Source);
-            //var t = contractsList.Items.SourceCollection;
-            //Contract selectedContract = mContractsList[index];
-            //mViewModel.ShowEditerWindow(selectedContract);
-            
+            Grid currItem = (Grid)sender;
+            TextBlock currTextBlock = (TextBlock)currItem.FindName("titleBlock");
+            String selectedContractName = currTextBlock.Text;
+            Contract selectedContract = mContracts[selectedContractName];
+            ItemEditorWindow editorWindow = new ItemEditorWindow(selectedContract, mCoordinator);
+            editorWindow.Show();
+
         }
 
         public void NewContractClicked(Object sender, RoutedEventArgs e)

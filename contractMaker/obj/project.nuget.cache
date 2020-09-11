@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SbCae/mUks+5jK2wYhiWKjrHcxwkUc2T9qKldy8LemVeRCimk9eS/nFio6oFp8twvDSdwwK/MGJ3hoNqr5JuyA==",
+  "dgSpecHash": "D73Rs1fbmn/qcIQqyp0reBV74oQkgCM/2L2LmyAhX1CA9oq9qCqxzmDk3D0WyCud4eTxuraiSo6snkwII2BAIg==",
   "success": true,
-  "projectFilePath": "D:\\contractMaker\\contractMaker\\contractMaker.csproj",
+  "projectFilePath": "D:\\contractMaker\\CMGit\\ContractMaker\\contractMaker\\contractMaker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\brand\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],
