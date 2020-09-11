@@ -98,16 +98,11 @@
             <Button Width="200" Height="30"
                     Content="New Contract"
                     HorizontalAlignment="Left"
-                    Margin="50,0,0,0"
+                    Margin="50,-40,0,0"
                     Click="NewContractClicked">
-                
+
             </Button>
-            
-            <Button Width="120" Height="20"
-                HorizontalAlignment="Right"
-                Content="Go to Edit Window"
-                Click="ShowEditerWindow"/>
-            
+
         </Grid>
     </StackPanel>
 </Window>
