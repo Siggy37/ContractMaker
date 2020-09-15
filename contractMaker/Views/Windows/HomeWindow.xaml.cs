@@ -37,7 +37,11 @@ namespace contractMaker.Views
             
             InitializeComponent();
 
-            contractsList.ItemsSource = mContractsList;
+            InitializeLists(mContractsList);
+
+            contractsList.ItemsSource = mPendingList;
+            outstandingList.ItemsSource = mOutstandingList;
+            completedList.ItemsSource = mCompletedList;
         }
 
         public void ShowEditerWindow(Object sender, RoutedEventArgs e)
