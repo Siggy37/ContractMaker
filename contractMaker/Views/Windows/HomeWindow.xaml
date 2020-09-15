@@ -7,103 +7,297 @@
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
     <StackPanel>
-        <Grid Height="50" Width="800">
-            <TextBlock Text="Contract Maker" FontSize="40"
+        <TabControl>
+
+            <TabItem Header="Pending Contracts">
+                <StackPanel>
+                    <Grid Height="50" Width="800">
+                        <TextBlock Text="Contract Maker" FontSize="40"
                        TextAlignment="Center"
                        Background="Crimson">
-                
-            </TextBlock>
-        </Grid>
-        <Grid Width="800" Height="20">
-            <TextBlock Text="Contract Name"
+
+                        </TextBlock>
+                    </Grid>
+                    <Grid Width="800" Height="20">
+                        <TextBlock Text="Contract Name"
                        Margin="30,0,0,0">
-                
-            </TextBlock>
-            <TextBlock Text="Total Contract Value"
+
+                        </TextBlock>
+                        <TextBlock Text="Total Contract Value"
                        Margin="250,0,0,0">
-                
-            </TextBlock>
-            <TextBlock Text="Date Modified"
+
+                        </TextBlock>
+                        <TextBlock Text="Date Modified"
                        Margin="440,0,0,0">
-                
-            </TextBlock>
-            <TextBlock Text="Date Created"
+
+                        </TextBlock>
+                        <TextBlock Text="Date Created"
                        Margin="580,0,0,0">
-                
-            </TextBlock>
-        </Grid>
-        <ListView Name="contractsList" Width="800" Height="280"
+
+                        </TextBlock>
+                    </Grid>
+                    <ListView Name="contractsList" Width="800" Height="280"
                   Background="LightGray">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <WrapPanel>
-                        <Grid Background="White"
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel>
+                                    <Grid Background="White"
                               Height="20"
                               UIElement.PreviewMouseDown="LaunchEditerWindow">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="240" />
-                                <ColumnDefinition Width="170" />
-                                <ColumnDefinition Width="150" />
-                                <ColumnDefinition Width="130" />
-                                <ColumnDefinition Width="70" />
-                            </Grid.ColumnDefinitions>
-                        <TextBlock Name="titleBlock"
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="240" />
+                                            <ColumnDefinition Width="170" />
+                                            <ColumnDefinition Width="150" />
+                                            <ColumnDefinition Width="130" />
+                                            <ColumnDefinition Width="70" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Name="titleBlock"
                             Grid.Column="0"
                             Text="{Binding mTitle}"
                                    Margin="23,0,0,0">
-                            
-                        </TextBlock>
 
-                            <TextBlock Grid.Column="1"
+                                        </TextBlock>
+
+                                        <TextBlock Grid.Column="1"
                                        Text="$"
                                        Margin="3,0,0,0">
-                                
-                            </TextBlock>
-                            <TextBlock Grid.Column="1"
+
+                                        </TextBlock>
+                                        <TextBlock Grid.Column="1"
                             Text="{Binding mTotalAmount}"
                                    Margin="15,0,0,0">
-                        </TextBlock>
-                        <TextBlock Grid.Column="2" 
+                                        </TextBlock>
+                                        <TextBlock Grid.Column="2" 
                                    Text="{Binding  mDateLastModified}"
                                    Margin="25,0,0,0">
-                            
-                        </TextBlock>
 
-                            <TextBlock Grid.Column="3"
+                                        </TextBlock>
+
+                                        <TextBlock Grid.Column="3"
                                        Text="{Binding mDateCreated}"
                                        Margin="14,0,0,0">
-                                
-                            </TextBlock>
-                            
-                        
 
-                        <Button Grid.Column="4" 
+                                        </TextBlock>
+
+
+
+                                        <Button Grid.Column="4" 
                             Name="deleteButton"
                                 Height="20"
                                 Width="50"
                                 HorizontalAlignment="Right"
                                 Margin="0,0,0,0"
                                 Content="Delete">
-                            
-                        </Button>
-                        </Grid>
-                    </WrapPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>    
-        </ListView>
 
-        <Grid Width="800" Height="100" 
+                                        </Button>
+                                    </Grid>
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Grid Width="800" Height="100" 
               VerticalAlignment="Bottom"
               Background="LightGray">
 
-            <Button Width="200" Height="30"
+                        <Button Width="200" Height="30"
                     Content="New Contract"
                     HorizontalAlignment="Left"
                     Margin="50,-40,0,0"
                     Click="NewContractClicked">
 
-            </Button>
+                        </Button>
 
-        </Grid>
+                    </Grid>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Outstanding">
+                <StackPanel>
+                    <Grid Width="800" Height="20">
+                        <TextBlock Text="Contract Name"
+                       Margin="30,0,0,0">
+
+                        </TextBlock>
+                        <TextBlock Text="Total Contract Value"
+                       Margin="250,0,0,0">
+
+                        </TextBlock>
+                        <TextBlock Text="Date Modified"
+                       Margin="440,0,0,0">
+
+                        </TextBlock>
+                        <TextBlock Text="Date Created"
+                       Margin="580,0,0,0">
+
+                        </TextBlock>
+                    </Grid>
+                    <ListView Name="outstandingList" Width="800" Height="280"
+                  Background="LightGray">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel>
+                                    <Grid Background="White"
+                              Height="20"
+                              UIElement.PreviewMouseDown="LaunchEditerWindow">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="240" />
+                                            <ColumnDefinition Width="170" />
+                                            <ColumnDefinition Width="150" />
+                                            <ColumnDefinition Width="130" />
+                                            <ColumnDefinition Width="70" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Name="titleBlock"
+                            Grid.Column="0"
+                            Text="{Binding mTitle}"
+                                   Margin="23,0,0,0">
+
+                                        </TextBlock>
+
+                                        <TextBlock Grid.Column="1"
+                                       Text="$"
+                                       Margin="3,0,0,0">
+
+                                        </TextBlock>
+                                        <TextBlock Grid.Column="1"
+                            Text="{Binding mTotalAmount}"
+                                   Margin="15,0,0,0">
+                                        </TextBlock>
+                                        <TextBlock Grid.Column="2" 
+                                   Text="{Binding  mDateLastModified}"
+                                   Margin="25,0,0,0">
+
+                                        </TextBlock>
+
+                                        <TextBlock Grid.Column="3"
+                                       Text="{Binding mDateCreated}"
+                                       Margin="14,0,0,0">
+
+                                        </TextBlock>
+
+
+
+                                        <Button Grid.Column="4" 
+                            Name="deleteButton"
+                                Height="20"
+                                Width="50"
+                                HorizontalAlignment="Right"
+                                Margin="0,0,0,0"
+                                Content="Delete">
+
+                                        </Button>
+                                    </Grid>
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Grid Width="800" Height="100" 
+              VerticalAlignment="Bottom"
+              Background="LightGray">
+
+                        <Button Width="200" Height="30"
+                    Content="New Contract"
+                    HorizontalAlignment="Left"
+                    Margin="50,-40,0,0"
+                    Click="NewContractClicked">
+
+                        </Button>
+
+                    </Grid>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Completed">
+                <StackPanel>
+                    <Grid Width="800" Height="20">
+                        <TextBlock Text="Contract Name"
+                       Margin="30,0,0,0">
+
+                        </TextBlock>
+                        <TextBlock Text="Total Contract Value"
+                       Margin="250,0,0,0">
+
+                        </TextBlock>
+                        <TextBlock Text="Date Modified"
+                       Margin="440,0,0,0">
+
+                        </TextBlock>
+                        <TextBlock Text="Date Created"
+                       Margin="580,0,0,0">
+
+                        </TextBlock>
+                    </Grid>
+                    <ListView Name="completedList" Width="800" Height="280"
+                  Background="LightGray">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel>
+                                    <Grid Background="White"
+                              Height="20"
+                              UIElement.PreviewMouseDown="LaunchEditerWindow">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="240" />
+                                            <ColumnDefinition Width="170" />
+                                            <ColumnDefinition Width="150" />
+                                            <ColumnDefinition Width="130" />
+                                            <ColumnDefinition Width="70" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Name="titleBlock"
+                            Grid.Column="0"
+                            Text="{Binding mTitle}"
+                                   Margin="23,0,0,0">
+
+                                        </TextBlock>
+
+                                        <TextBlock Grid.Column="1"
+                                       Text="$"
+                                       Margin="3,0,0,0">
+
+                                        </TextBlock>
+                                        <TextBlock Grid.Column="1"
+                            Text="{Binding mTotalAmount}"
+                                   Margin="15,0,0,0">
+                                        </TextBlock>
+                                        <TextBlock Grid.Column="2" 
+                                   Text="{Binding  mDateLastModified}"
+                                   Margin="25,0,0,0">
+
+                                        </TextBlock>
+
+                                        <TextBlock Grid.Column="3"
+                                       Text="{Binding mDateCreated}"
+                                       Margin="14,0,0,0">
+
+                                        </TextBlock>
+
+
+
+                                        <Button Grid.Column="4" 
+                            Name="deleteButton"
+                                Height="20"
+                                Width="50"
+                                HorizontalAlignment="Right"
+                                Margin="0,0,0,0"
+                                Content="Delete">
+
+                                        </Button>
+                                    </Grid>
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Grid Width="800" Height="100" 
+              VerticalAlignment="Bottom"
+              Background="LightGray">
+
+                        <Button Width="200" Height="30"
+                    Content="New Contract"
+                    HorizontalAlignment="Left"
+                    Margin="50,-40,0,0"
+                    Click="NewContractClicked">
+
+                        </Button>
+
+                    </Grid>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
     </StackPanel>
 </Window>

@@ -24,6 +24,9 @@ namespace contractMaker.Views
         private ContractMakerCoordinator mCoordinator;
         private Dictionary<String, Contract> mContracts;
         private List<Contract> mContractsList;
+        private List<Contract> mPendingList;
+        private List<Contract> mOutstandingList;
+        private List<Contract> mCompletedList;
         public HomeWindow()
         {
             mCoordinator = new ContractMakerCoordinator();
@@ -73,6 +76,30 @@ namespace contractMaker.Views
                 output.Add(contract);
             }
             return output;
+        }
+
+        private void InitializeLists(List<Contract> allContracts)
+        {
+            mPendingList = new List<Contract>();
+            mOutstandingList = new List<Contract>();
+            mCompletedList = new List<Contract>();
+
+            foreach(Contract contract in allContracts)
+            {
+                if (contract.isPending())
+                {
+                    mPendingList.Add(contract);
+                }
+                if (contract.isOutstanding())
+                {
+                    mOutstandingList.Add(contract);
+                }
+                if (contract.isCompleted())
+                {
+                    mCompletedList.Add(contract);
+                }
+            }
+
         }
 
     }

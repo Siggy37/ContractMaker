@@ -18,6 +18,13 @@ namespace contractMaker.Utils.DataTypes
         public String mDateLastModified { get; set; }
 
         [JsonProperty]
+        private Boolean mPending;
+        [JsonProperty]
+        private Boolean mOutstanding;
+        [JsonProperty]
+        private Boolean mCompleted;
+
+        [JsonProperty]
         private List<ItemEntry> mItemEntries;
 
         public Contract(String title)
@@ -27,6 +34,10 @@ namespace contractMaker.Utils.DataTypes
             mDateCreated = DateTime.Now.ToString("MM/dd/yyyy");
             mDateLastModified = DateTime.Now.ToString("MM/dd/yyyy");
             mItemEntries = new List<ItemEntry>();
+
+            mPending = true;
+            mOutstanding = false;
+            mCompleted = false;
         }
         public void SetTotal(float amount)
         {
@@ -57,6 +68,21 @@ namespace contractMaker.Utils.DataTypes
         public String getTitle()
         {
             return mTitle;
+        }
+
+        public Boolean isPending()
+        {
+            return mPending;
+        }
+
+        public Boolean isOutstanding()
+        {
+            return mOutstanding;
+        }
+
+        public Boolean isCompleted()
+        {
+            return mCompleted;
         }
     }
 }
