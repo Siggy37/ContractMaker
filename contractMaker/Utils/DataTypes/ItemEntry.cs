@@ -21,6 +21,14 @@ namespace contractMaker.Utils.DataTypes
         {
         }
 
+        public ItemEntry(ItemEntry item)
+        {
+            mAmount = item.mAmount;
+            mTitle = item.mTitle;
+            mNotes = item.mNotes;
+            mDate = item.mDate;
+        }
+
         public void SaveItem(float amount, String title, String date)
         {
             mAmount = amount;
@@ -41,6 +49,33 @@ namespace contractMaker.Utils.DataTypes
         public void SetDate(String date)
         {
             mDate = date;
+        }
+
+        public override bool Equals(object obj)
+        {
+            var other = obj as ItemEntry;
+            if (null == other)
+            {
+                return base.Equals(obj);
+            }
+            
+            if (this.mAmount != other.mAmount)
+            {
+                return false;
+            }
+            if (this.mDate != other.mDate)
+            {
+                return false;
+            }
+            if (this.mNotes != other.mNotes)
+            {
+                return false;
+            }
+            if (this.mTitle != other.mTitle)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

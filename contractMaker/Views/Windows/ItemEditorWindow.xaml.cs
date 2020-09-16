@@ -27,12 +27,14 @@ namespace contractMaker.Views
     {
         private ItemEditorViewModel mViewModel;
         private Contract mContract;
+        private FrozenContract mContractAtLoad;
         private List<ItemEntry> mItemEntries;
         private ContractMakerCoordinator mCoordinator;
 
         public ItemEditorWindow(Contract contract, ContractMakerCoordinator coordinator)
         {
             mContract = contract;
+            mContractAtLoad = new FrozenContract(contract);
             mCoordinator = coordinator;
             mViewModel = new ItemEditorViewModel(mCoordinator);
             mItemEntries = mContract.GetItemEntries();
@@ -45,7 +47,6 @@ namespace contractMaker.Views
             Binding headerBinding = new Binding();
             headerBinding.Source = mContract;
             BindingOperations.SetBinding(Header, TextBox.TextProperty, headerBinding);
-            // totalAmountText.Text = mContract.GetTotalAmount().ToString();
             titleText.Text = mContract.getTitle();
             itemList.ItemsSource = mItemEntries;
         }
@@ -53,7 +54,7 @@ namespace contractMaker.Views
         private void SaveButtonClicked(object sender, RoutedEventArgs e)
         {
             mContract.SetItemEntries(mItemEntries);
-            mViewModel.SaveButtonClicked(mContract, mCoordinator.GetContracts());
+            mViewModel.SaveButtonClicked(mContract, mContractAtLoad, mCoordinator.GetContracts());
         }
 
         public void NewItemButtonClicked(object sender, RoutedEventArgs e)
@@ -85,7 +86,7 @@ namespace contractMaker.Views
 
         public void FinalizeButtonClicked(object sender, RoutedEventArgs e)
         {
-            mViewModel.FinalizeButtonClicked(mContract, mCoordinator.GetContracts());
+            mViewModel.FinalizeButtonClicked(mContract, mContractAtLoad, mCoordinator.GetContracts());
             mCoordinator.RefreshHomeWindow();
             this.Close();
         }

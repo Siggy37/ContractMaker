@@ -21,20 +21,49 @@ namespace contractMaker.ViewModels
             return itemEntries;
         }
 
-        public void SaveButtonClicked(Contract contract, Dictionary<String, Contract> allContracts)
+        public void SaveButtonClicked(Contract contract, FrozenContract contractAtLoad, Dictionary<String, Contract> allContracts)
         {
-            // Dictionary<String, Contract> contractDict = new Dictionary<string, Contract>();
+            if (AreContractsDifferent(contract, contractAtLoad))
+            {
+                contract.mDateLastModified = DateTime.Now.ToString("MM/dd/yyyy");
+            }
             allContracts[contract.getTitle()] = contract;
             String jsonVersion = JsonConvert.SerializeObject(allContracts);
             System.IO.File.WriteAllText(mCoordinator.GetDataLocation(), jsonVersion);
-            // Dictionary<String, List<ItemEntry>> realVersion = JsonConvert.DeserializeObject<Dictionary<String, List<ItemEntry>>>(jsonVersion);
-            String m = "m";
+
         }
 
-        public void FinalizeButtonClicked(Contract contract, Dictionary<String, Contract> allContracts)
+        public void FinalizeButtonClicked(Contract contract, FrozenContract contractAtLoad, Dictionary<String, Contract> allContracts)
         {
             contract.FinalizeContract();
-            SaveButtonClicked(contract, allContracts);
+            SaveButtonClicked(contract, contractAtLoad, allContracts);
+        }
+
+        public Boolean AreContractsDifferent(Contract c1, FrozenContract c2)
+        {
+            if (c1.mTotalAmount != c2.mTotalAmount)
+            {
+                return true;
+            }
+
+            List<ItemEntry> c1Items = c1.GetItemEntries();
+            List<ItemEntry> c2Items = c2.GetItemEntries();
+
+            if (c1Items.Count != c2Items.Count)
+            {
+                return true;
+            } 
+            else
+            {
+                for (int i = 0; i < c1Items.Count; i++)
+                {
+                    if (!c1Items[i].Equals(c2Items[i]))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
     }

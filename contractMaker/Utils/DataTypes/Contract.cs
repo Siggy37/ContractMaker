@@ -27,6 +27,7 @@ namespace contractMaker.Utils.DataTypes
         [JsonProperty]
         private List<ItemEntry> mItemEntries;
 
+        [JsonConstructor]
         public Contract(String title)
         {
             mTitle = title;
@@ -34,6 +35,19 @@ namespace contractMaker.Utils.DataTypes
             mDateCreated = DateTime.Now.ToString("MM/dd/yyyy");
             mDateLastModified = DateTime.Now.ToString("MM/dd/yyyy");
             mItemEntries = new List<ItemEntry>();
+
+            mPending = true;
+            mOutstanding = false;
+            mCompleted = false;
+        }
+
+        public Contract(Contract oldContract)
+        {
+            mTitle = oldContract.mTitle;
+            mTotalAmount = oldContract.mTotalAmount;
+            mDateCreated = oldContract.mDateCreated;
+            mDateLastModified = oldContract.mDateLastModified;
+            mItemEntries = oldContract.mItemEntries;
 
             mPending = true;
             mOutstanding = false;

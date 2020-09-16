@@ -25,7 +25,7 @@ namespace contractMaker.Views.PopUpWindows
         public NewContractPopUpWindow(HomeWindowViewModel viewModel)
         {
             mViewModel = viewModel;
-            mContract = new Contract(null);
+            mContract = new Contract(title: null);
             InitializeComponent();
             titleEntry.DataContext = mContract;
         }
