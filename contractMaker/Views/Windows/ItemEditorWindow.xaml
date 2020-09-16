@@ -157,7 +157,8 @@
             <Button x:Name="finishButton" Content="Finalize"
                 Width="100" Height="25" 
                 HorizontalAlignment="Right"
-                    Margin="20,20,40,0"/>
+                Margin="20,20,40,0"
+                Click="FinalizeButtonClicked"/>
         </Grid>
 
     </StackPanel>

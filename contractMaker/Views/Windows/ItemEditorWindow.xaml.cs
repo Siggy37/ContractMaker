@@ -82,5 +82,12 @@ namespace contractMaker.Views
             float total = mContract.mTotalAmount;
             totalAmountText.Text = total.ToString();
         }
+
+        public void FinalizeButtonClicked(object sender, RoutedEventArgs e)
+        {
+            mViewModel.FinalizeButtonClicked(mContract, mCoordinator.GetContracts());
+            mCoordinator.RefreshHomeWindow();
+            this.Close();
+        }
     }
 }

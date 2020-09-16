@@ -84,5 +84,12 @@ namespace contractMaker.Utils.DataTypes
         {
             return mCompleted;
         }
+
+        public void FinalizeContract()
+        {
+            mOutstanding = true;
+
+            mPending = false;
+        }
     }
 }

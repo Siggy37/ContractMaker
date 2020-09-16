@@ -31,5 +31,11 @@ namespace contractMaker.ViewModels
             String m = "m";
         }
 
+        public void FinalizeButtonClicked(Contract contract, Dictionary<String, Contract> allContracts)
+        {
+            contract.FinalizeContract();
+            SaveButtonClicked(contract, allContracts);
+        }
+
     }
 }

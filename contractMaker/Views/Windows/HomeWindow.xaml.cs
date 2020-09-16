@@ -67,8 +67,15 @@ namespace contractMaker.Views
 
         public void RefreshItems()
         {
-            contractsList.ItemsSource = mViewModel.GetContractsList(mCoordinator.GetContracts());
+
+            
+            List<Contract> newContracts = mViewModel.GetContractsList(mCoordinator.GetContracts());
+            InitializeLists(newContracts);
+            contractsList.ItemsSource = mPendingList;
             contractsList.Items.Refresh();
+
+            outstandingList.ItemsSource = mOutstandingList;
+            outstandingList.Items.Refresh();
         }
 
         private List<Contract> ConvertContractDictToList()
