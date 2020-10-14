@@ -48,6 +48,7 @@ namespace contractMaker.Views
             headerBinding.Source = mContract;
             BindingOperations.SetBinding(Header, TextBox.TextProperty, headerBinding);
             titleText.Text = mContract.getTitle();
+            totalAmountText.Text = mContract.GetTotalAmount().ToString();
             itemList.ItemsSource = mItemEntries;
         }
 
