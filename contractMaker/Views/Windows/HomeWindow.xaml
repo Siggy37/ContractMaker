@@ -11,13 +11,12 @@
 
             <TabItem Header="Pending Contracts">
                 <StackPanel>
-                    <Grid Height="50" Width="800">
-                        <TextBlock Text="Contract Maker" FontSize="40"
+                    <!-- <Grid Height="50" Width="800">
+                       <TextBlock Text="Contract Maker" FontSize="40"
                        TextAlignment="Center"
                        Background="Crimson">
-
                         </TextBlock>
-                    </Grid>
+                    </Grid> -->
                     <Grid Width="800" Height="20">
                         <TextBlock Text="Contract Name"
                        Margin="30,0,0,0">

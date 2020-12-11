@@ -30,6 +30,8 @@ namespace contractMaker.ViewModels
             allContracts[contract.getTitle()] = contract;
             String jsonVersion = JsonConvert.SerializeObject(allContracts);
             System.IO.File.WriteAllText(mCoordinator.GetDataLocation(), jsonVersion);
+            mCoordinator.RefreshHomeWindow();
+
 
         }
 
